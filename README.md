@@ -8,9 +8,9 @@
 |password|VARCHAR(255)|null: false|
 
 ### Association
-has_many :groups_users
-has_many :groups, through: groups_users
-has_many :messages
+- has_many :groups_users
+- has_many :groups, through: groups_users
+- has_many :messages
 
 ## groups テーブル
 |Column|Type|Options|
@@ -18,9 +18,9 @@ has_many :messages
 |group_name|VARCHAR(255)|null: false|
 
 ### Association
-has_many :groups_users
-has_many :users, through: groups_users
-has_many :messages
+- has_many :groups_users
+- has_many :users, through: groups_users
+- has_many :messages
 
 ## groups_users テーブル
 |Column|Type|Options|
@@ -29,8 +29,8 @@ has_many :messages
 |group_id|VARCHAR(255)|null: false, foreign_key: true|
 
 ### Association
-belongs_to :users
-belongs_to :groups
+- belongs_to :users
+- belongs_to :groups
 
 ## messages テーブル
 |Column|Type|Options|
@@ -41,5 +41,5 @@ belongs_to :groups
 |image|string|null: false|
 
 ### Association
-belongs_to :users
-belongs_to :groups
+- belongs_to :users
+- belongs_to :groups
