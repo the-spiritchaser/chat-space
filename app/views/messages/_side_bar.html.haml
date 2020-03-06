@@ -1,3 +1,14 @@
 .sideBar
   .sideHeader
+    .sideBox
+      %p.sideBox__user-name
+        name
+      %ul.sideBox__icon
+        %li.sideBox__icon--edit
+          = link_to "#" do
+            = icon('fas', 'edit', class: 'sideBox__icon--edit-btn')
+        %li.sideBox__icon--cog
+          = link_to "#" do
+            = icon('fas', 'cog', class: 'sideBox__icon--cog-btn')
   .groups
+    .group
