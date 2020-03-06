@@ -1,0 +1,17 @@
+.chatMain{
+  width: calc(100% - 300px);
+  background-color: #ffffff;
+  .mainHeader{
+    height: 100px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+  }
+  .messages{
+    height: calc(100% - 190px);
+    background-color: #fafafa;
+  }
+  .footer{
+    height: 90px;
+    background-color: #d2d2d2;
+  }
+}
