@@ -6,9 +6,18 @@
       %ul.sideBox__icon
         %li.sideBox__icon--edit
           = link_to "#" do
-            = icon('fas', 'edit', class: 'sideBox__icon--edit-btn')
+            = icon('fas', 'edit', class: 'sideBox__icon--btn')
         %li.sideBox__icon--cog
           = link_to "#" do
-            = icon('fas', 'cog', class: 'sideBox__icon--cog-btn')
+            = icon('fas', 'cog', class: 'sideBox__icon--btn')
   .groups
     .group
+      %p.group__group-name
+        hoge
+      %p.group__info
+        仮のメッセージだよ
+    .group
+      %p.group__group-name
+        huga
+      %p.group__info
+        第二のメッセージだよ

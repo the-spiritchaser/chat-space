@@ -1,6 +1,8 @@
 .sideBar{
   width: 300px;
   background-color: #253141;
+  font-weight: bold;
+  color: #ffffff;
   .sideHeader{
     height: 100px;
     background-color: #253141;
@@ -14,17 +16,14 @@
       justify-content: space-between;
       &__user-name{
         line-height: 20px;
+        font-size: 16px;
       }
       &__icon{
         width: 60px;
         display: flex;
         justify-content: flex-end;
         line-height: 20px;
-        &--edit-btn{
-          color: #ffffff;
-          margin-left: 5px;
-        }
-        &--cog-btn{
+        &--btn{
           color: #ffffff;
           margin-left: 5px;
         }
@@ -34,6 +33,17 @@
   .groups{
     height: calc(100% - 100px);
     background-color: #2f3e51;
+    padding: 20px 20px 0;
+    .group{
+      margin-bottom: 40px;
+      &__group-name{
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__info{
+        font-size: 11px;
+      }
+    }
   }
 }
 
