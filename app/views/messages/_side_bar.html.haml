@@ -4,12 +4,12 @@
       %p.sideBox__user-name
         name
       %ul.sideBox__icon
-        %li.sideBox__icon--edit
-          = link_to "#" do
-            = icon('fas', 'edit', class: 'sideBox__icon--btn')
-        %li.sideBox__icon--cog
-          = link_to "#" do
-            = icon('fas', 'cog', class: 'sideBox__icon--btn')
+        %li.sideBox__icon__list--edit
+          = link_to "#", class: "sideBox__icon__btn" do
+            = icon('fas', 'edit', class: 'sideBox__icon__btn--edit')
+        %li.sideBox__icon__list--cog
+          = link_to "#", class: ".sideBox__icon__btn" do
+            = icon('fas', 'cog', class: 'sideBox__icon__btn--cog')
   .groups
     .group
       %p.group__group-name

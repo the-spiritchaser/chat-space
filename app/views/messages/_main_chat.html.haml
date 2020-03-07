@@ -1,4 +1,14 @@
 .chatMain
   .mainHeader
+    .mainHeader__left-content
+      %p.mainHeader__left-content__group-name
+        hoge
+      %ul.mainHeader__left-content__member-list
+        Member :
+        %li.mainHeader__left-content__member-list__member
+          name
+    = link_to "#", class: "mainHeader__edit" do
+      .mainHeader__edit__btn
+        Edit
   .messages
   .footer

@@ -23,9 +23,15 @@
         display: flex;
         justify-content: flex-end;
         line-height: 20px;
-        &--btn{
-          color: #ffffff;
-          margin-left: 5px;
+        &__btn{
+          &--edit{
+            color: #ffffff;
+            margin-left: 5px;
+          }
+          &--cog{
+            color: #ffffff;
+            margin-left: 5px;
+          }
         }
       }
     }

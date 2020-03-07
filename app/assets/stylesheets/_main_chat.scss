@@ -5,6 +5,35 @@
     height: 100px;
     background-color: #ffffff;
     border-bottom: 1px solid #eeeeee;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    &__left-content{
+      margin-top: 35px;
+      &__group-name{
+        font-size: 20px;
+        color: #333333;
+      }
+      &__member-list{
+        display: flex;
+        font-size: 12px;
+        color: #999999;
+        margin-top: 15px;
+        
+      }
+    }
+    &__edit{
+      text-decoration: none;
+      &__btn{
+        color: #38aef0;
+        font-size: 16px;
+        height: 40px;
+        width: 72px;
+        line-height: 40px;
+        margin-top: 28px;
+        padding: 0 20px;
+      }
+    }
   }
   .messages{
     height: calc(100% - 190px);
