@@ -37,12 +37,16 @@
     padding: 20px 20px 0;
     .group{
       margin-bottom: 40px;
-      &__group-name{
-        font-size: 15px;
-        margin-bottom: 5px;
-      }
-      &__info{
-        font-size: 11px;
+      .group-link{
+        text-decoration: none;
+        color: $white;
+        &__group-name{
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        &__info{
+          font-size: 11px;
+        }
       }
     }
   }
