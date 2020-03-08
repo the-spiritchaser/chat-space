@@ -1,8 +1,7 @@
 .sideBar{
   width: 300px;
-  background-color: #253141;
   font-weight: bold;
-  color: #ffffff;
+  color: $white;
   .sideHeader{
     height: 100px;
     background-color: #253141;
@@ -21,11 +20,11 @@
         line-height: 20px;
         &__btn{
           &--edit{
-            color: #ffffff;
+            color: $white;
             margin-left: 5px;
           }
           &--cog{
-            color: #ffffff;
+            color: $white;
             margin-left: 5px;
           }
         }
