@@ -1,0 +1,23 @@
+.sideBar
+  .sideHeader
+    .sideBox
+      %p.sideBox__user-name
+        伝説の山田たえ
+      %ul.sideBox__icon
+        %li.sideBox__icon__list--edit
+          = link_to "#", class: "sideBox__icon__btn" do
+            = icon('fas', 'edit', class: 'sideBox__icon__btn--edit')
+        %li.sideBox__icon__list--cog
+          = link_to "#", class: ".sideBox__icon__btn" do
+            = icon('fas', 'cog', class: 'sideBox__icon__btn--cog')
+  .groups
+    .group
+      %p.group__group-name
+        チーム フランシュシュ
+      %p.group__info
+        ヴォエ
+    .group
+      %p.group__group-name
+        巽の部屋
+      %p.group__info
+        サガジェンヌ

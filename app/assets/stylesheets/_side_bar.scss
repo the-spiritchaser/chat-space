@@ -1,0 +1,50 @@
+.sideBar{
+  width: 300px;
+  font-weight: bold;
+  color: $white;
+  .sideHeader{
+    height: 100px;
+    background-color: #253141;
+    @include flex-box(center);
+    align-items: center;
+    .sideBox{
+      @include box-sizing(20px, 260px);
+      @include flex-box(space-between);
+      &__user-name{
+        line-height: 20px;
+        font-size: 16px;
+      }
+      &__icon{
+        width: 60px;
+        @include flex-box(flex-end);
+        line-height: 20px;
+        &__btn{
+          &--edit{
+            color: $white;
+            margin-left: 5px;
+          }
+          &--cog{
+            color: $white;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+  .groups{
+    height: calc(100% - 100px);
+    background-color: #2f3e51;
+    padding: 20px 20px 0;
+    .group{
+      margin-bottom: 40px;
+      &__group-name{
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__info{
+        font-size: 11px;
+      }
+    }
+  }
+}
+
