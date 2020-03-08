@@ -6,29 +6,25 @@
     background-color: #ffffff;
     border-bottom: 1px solid #eeeeee;
     padding: 0 40px;
-    display: flex;
-    justify-content: space-between;
+    @include flex-box(space-between);
     &__left-content{
       margin-top: 35px;
       &__group-name{
-        font-size: 20px;
-        color: #333333;
+        @include font-setting(20px, #333333);
       }
       &__member-list{
+        @include font-setting(12px, #999999);
         display: flex;
-        font-size: 12px;
-        color: #999999;
         margin-top: 15px;
       }
     }
     &__edit{
       text-decoration: none;
       &__btn{
+        @include box-sizing(40px, 72px);
         color: #38aef0;
         border: solid 1px #38aef0;
         font-size: 16px;
-        height: 40px;
-        width: 72px;
         line-height: 40px;
         margin-top: 28px;
         padding: 0 20px;
@@ -45,18 +41,15 @@
         display: flex;
         padding-bottom: 12px;
         &__user-name{
-          font-size: 16px;
-          color: #333333;
+          @include font-setting(16px, #333333);
         }
         &__date{
-          font-size: 12px;
-          color: #999999;
+          @include font-setting(12px, #999999);
           margin-left: 10px;
         }
       }
       &__text{
-        font-size: 14px;
-        color: #434a54;
+        @include font-setting(14px, #434a54);
       }
     }
   }
@@ -66,30 +59,25 @@
     background-color: #d2d2d2;
     form{
       display: flex;
-        .form__input__field{
-          background-color: red;
+        .form__input-field{
           width: 100%;
           position: relative;
           &__text{
-            width: 100%;
-            height: 50px;
+            @include box-sizing(50px, 100%);
             padding: 0 40px 0 10px;
           }
           &__image{
-            // display: none;
             position: absolute;
             top: 10px;
             right: 10px;
+            cursor: pointer;
           }
           .file{
             display: none;
           }
-
-
         }
-        .form__input__send-btn{
-          width: 100px;
-          height: 50px;
+        .form__send-btn{
+          @include box-sizing(50px, 100px);
           padding: 0 30px;
           margin-left: 15px;
           background-color: #38aef0;

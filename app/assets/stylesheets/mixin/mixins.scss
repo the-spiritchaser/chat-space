@@ -1,0 +1,14 @@
+@mixin box-sizing($height, $width){
+  height: $height;
+  width: $width;
+}
+
+@mixin font-setting($font-size, $color){
+  font-size: $font-size;
+  color: $color;
+}
+
+@mixin flex-box($justify-content){
+  display: flex;
+  justify-content: $justify-content;
+}

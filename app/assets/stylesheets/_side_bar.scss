@@ -6,22 +6,18 @@
   .sideHeader{
     height: 100px;
     background-color: #253141;
-    display: flex;
-    justify-content: center;
+    @include flex-box(center);
     align-items: center;
     .sideBox{
-      height: 20px;
-      width: 260px;
-      display: flex;
-      justify-content: space-between;
+      @include box-sizing(20px, 260px);
+      @include flex-box(space-between);
       &__user-name{
         line-height: 20px;
         font-size: 16px;
       }
       &__icon{
         width: 60px;
-        display: flex;
-        justify-content: flex-end;
+        @include flex-box(flex-end);
         line-height: 20px;
         &__btn{
           &--edit{
