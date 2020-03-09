@@ -18,9 +18,9 @@
         margin-top: 15px;
       }
     }
-    &__edit{
+    a{
       text-decoration: none;
-      &__btn{
+      .mainHeader__edit__btn{
         @include box-sizing(40px, 72px);
         color: $light-blue;
         border: solid 1px $light-blue;
@@ -50,7 +50,7 @@
       }
       &__content{
         &__text{
-        @include font-setting(14px, #434a54);
+        @include font-setting(14px, $black);
         }
       }
     }

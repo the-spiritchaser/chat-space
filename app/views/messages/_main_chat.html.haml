@@ -8,7 +8,7 @@
         %li.mainHeader__left-content__member-list__member
           - @group.users.each do |user|
             = user.name
-    = link_to edit_group_path(@group), class: "mainHeader__edit" do
+    = link_to edit_group_path(@group) do
       .mainHeader__edit__btn
         Edit
   .messages
@@ -19,6 +19,6 @@
       .form__input-field
         = f.text_field :text, class: "form__input-field__text", placeholder: "type a message"
         = f.label :image, class: 'form__mask__image' do
-          = icon('fas', 'image', class: 'icon')
+          = icon('far', 'image', class: 'icon')
           = f.file_field :image, class: 'file'
       = f.submit "Send", class: "form__send-btn"
