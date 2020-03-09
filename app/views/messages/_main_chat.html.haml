@@ -1,45 +1,24 @@
 .chatMain
   .mainHeader
     .mainHeader__left-content
-      %p.mainHeader__left-content__group-name
-        チーム フランシュシュ
+      .mainHeader__left-content__group-name
+        = @group.name
       %ul.mainHeader__left-content__member-list
         Member :
         %li.mainHeader__left-content__member-list__member
-          ゾンビ１号 ゾンビ２号 ゾンビ３号 ゾンビ４号 ゾンビ５号 ゾンビ６号 伝説の山田たえ
-    = link_to "#", class: "mainHeader__edit" do
+          - @group.users.each do |user|
+            = user.name
+    = link_to edit_group_path(@group) do
       .mainHeader__edit__btn
         Edit
   .messages
-    .message
-      .message__label
-        %p.message__label__user-name
-          伝説の山田たえ
-        %p.message__label__date
-          2020/03/06(Fri) 21:34:50
-      %p.message__text
-        ヴァウアアアアアア
-    .message
-      .message__label
-        %p.message__label__user-name
-          ゾンビ4号
-        %p.message__label__date
-          2020/03/06(Fri) 21:34:50
-      %p.message__text
-        騒がしいですね…
-    .message
-      .message__label
-        %p.message__label__user-name
-          伝説の山田たえ
-        %p.message__label__date
-          2020/03/06(Fri) 21:34:50
-      %p.message__text
-        ヴォエ
+    = render @messages
+
   .form
-    %form
+    = form_for [@group, @message] do |f|
       .form__input-field
-        %input{type: "text", class: "form__input-field__text", placeholder: "type a message"}
-        %label{class: "form__input-field__image"}
-          =icon('far', 'image')
-          %input{type: "file", class: "file"}
-      %input.form__send-btn{type: "submit", value: "Send"}
+        = f.text_field :text, class: "form__input-field__text", placeholder: "type a message"
+        = f.label :image, class: 'form__mask__image' do
+          = icon('far', 'image', class: 'icon')
+          = f.file_field :image, class: 'file'
+      = f.submit "Send", class: "form__send-btn"

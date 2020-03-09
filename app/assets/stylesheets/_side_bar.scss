@@ -4,7 +4,7 @@
   color: $white;
   .sideHeader{
     height: 100px;
-    background-color: #253141;
+    background-color: $side_blue_dark;
     @include flex-box(center);
     align-items: center;
     .sideBox{
@@ -33,7 +33,7 @@
   }
   .groups{
     height: calc(100% - 100px);
-    background-color: #2f3e51;
+    background-color: $side_blue_light;
     padding: 20px 20px 0;
     .group{
       margin-bottom: 40px;
