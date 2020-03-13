@@ -1,44 +1,34 @@
 $(function(){
 
   function buildHTML(message){
+    var message_template = 
+                          `<div class="message__label">
+                            <div class="message__label__user-name">
+                              ${message.user_name}
+                            </div>
+                            <div class="message__label__date">
+                              ${message.created_at}
+                            </div>
+                          </div>
+                          <div class="message__content">
+                            <p class="message__content__text">
+                              ${message.text}
+                            </p>
+                          </div>`
+
     if (message.image) {
       var html = 
-                  `<div class="message">
-                    <div class="message__label">
-                      <div class="message__label__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="message__label__date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="message__content">
-                      <p class="message__content__text">
-                        ${message.text}
-                      </p>
-                    </div>
+                  `<div class="message" data-message-id=${message.id}>
+                    ${message_template}
                     <img class="message__content__image" src=${message.image} alt="画像です"></img>
                   </div>`
-      return html;
     } else {
       var html = 
-                  `<div class="message">
-                    <div class="message__label">
-                      <div class="message__label__user-name">
-                        ${message.user_name}
-                      </div>
-                      <div class="message__label__date">
-                        ${message.created_at}
-                      </div>
-                    </div>
-                    <div class="message__content">
-                      <p class="message__content__text">
-                        ${message.text}
-                      </p>
-                    </div>
+                  `<div class="message" data-message-id=${message.id}>
+                    ${message_template}
                   </div>`
-      return html;
     }
+    return html;
   }
 
   $('#new_message').on('submit', function(e){
@@ -48,7 +38,7 @@ $(function(){
     var url = $(this).attr('action')
     $.ajax({
       url: url,
-      type: "POST",
+      type: 'POST',
       data: formData,
       dataType: 'json',
       processData: false,
@@ -60,11 +50,39 @@ $(function(){
       $('.messages').append(html);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('form')[0].reset();
-      $('.form__send-btn').prop('disabled', false);
+      $('.form__send-btn').prop('disabled', false)
     })
 
     .fail(function() {
-      alert("メッセージ送信に失敗しました");
+      alert("メッセージ送信に失敗しました")
     })
   })
+
+  var reloadMessages = function(){
+    var last_message_id = $('.message:last').data('message-id');
+
+    $.ajax({
+      url: "api/messages",
+      type: 'GET',
+      data: {id: last_message_id},
+      dataType: 'json'
+    })
+
+    .done(function(messages) {
+      if (messages.length !== 0){
+        var insertHTML = '';
+        $.each(messages, function(i, message){
+          insertHTML += buildHTML(message)
+        })
+        $('.messages').append(insertHTML)
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight})
+      }
+    })
+    .fail(function() {
+      alert('error');
+    });
+  }
+  if (document.location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloadMessages, 7000)
+  }
 });
