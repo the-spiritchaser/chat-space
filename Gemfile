@@ -73,7 +73,7 @@ gem 'devise'
 
 gem 'pry-rails'
 
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 
 gem 'mini_magick'
 
